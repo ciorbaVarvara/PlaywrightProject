@@ -17,7 +17,7 @@ export const test1 = async page => {
     p("test 1")
 
     const srs = new GetPortals(page);
-    await srs.beforeToOpen();
+   // await srs.beforeToOpen();
     await srs.society_UI_test();
 })
 }
@@ -36,7 +36,7 @@ export const test3 = async page => {
 
   await test.step ('Select personal Profile' , async () => {
   const srs = new GetProfile(page);
-  await srs.selectProfile()
+  await srs.corporateAccountComponentIsAvailable();
 })
 }
 
