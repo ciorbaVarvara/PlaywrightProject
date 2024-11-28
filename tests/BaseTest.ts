@@ -17,7 +17,6 @@ export const test1 = async page => {
     p("test 1")
 
     const srs = new GetPortals(page);
-   // await srs.beforeToOpen();
     await srs.society_UI_test();
 })
 }

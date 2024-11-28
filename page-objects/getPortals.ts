@@ -44,7 +44,7 @@ export class GetPortals {
 
     async society_UI_test (){
         
-        const browser = await chromium.launch({ headless: true });
+       /* const browser = await chromium.launch({ headless: true });
         const page = await browser.newPage();
         //const responsePromise = page.waitForResponse((response) => response.url().includes(this.apiTest));
         await this.page.goto(this.urlTest_UI);
@@ -53,7 +53,7 @@ export class GetPortals {
         //const responseBody = await response.json();
         //fs.writeFileSync('response.json', responseBody, 'utf-8');
         //console.log('Response saved to response.json');
-
+        */
 
     }
 
