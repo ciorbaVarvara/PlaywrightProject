@@ -6,26 +6,30 @@ import { GetProfile } from '../page-objects/eProfiles.ts'
 import { EServiceDescription } from '../page-objects/eServiceDescriptionPage.ts'
 import { EServicesDirectory } from '../page-objects/eServicesDirectory.ts'
 import { CaseDetails } from '../page-objects/caseDetails.ts'
-
+import { ServiceID } from '../page-objects/Sitemaps/servicesList.ts'
 
 test.describe("Registration of Society Service", () => {
-  test.beforeEach(async ({ page }) => {
+ /* test.beforeEach(async ({ page }) => {
     const srs = new GetPortals(page);
     await srs.society_UI_test();
+    const srs2 = new GetProfile(page);
+    await srs2.selectProfile()
   })
+    */
 
   test('Regression Test', async ({ page }) => {
-   // const srs2 = new GetProfile(page);
-   // await srs2.selectProfile()
+    const srs = new GetPortals(page);
+    await srs.society_UI_test();
+    const srs2 = new GetProfile(page);
+    await srs2.selectProfile()
+    const srs3 = new ServiceID(page);
+    await srs3.getServiceByKey();
 
-    const srs3 = new EServicesDirectory(page)
-    await srs3.selectServiceFromDirectory()
+    //const srs4 = new EServiceDescription(page)
+   // await srs4.startApplication();
 
-    const srs4 = new EServiceDescription(page)
-    await srs4.startApplication();
-
-    const srs5 = new CaseDetails(page)
-    await srs5.validateCaseDetails();
+   // const srs5 = new CaseDetails(page)
+   // await srs5.validateCaseDetails();
 
   });
 

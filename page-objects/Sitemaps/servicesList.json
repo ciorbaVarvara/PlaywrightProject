@@ -1,0 +1,331 @@
+{
+    "total": 11,
+    "page": 1,
+    "pageSize": 10,
+    "items": [
+        {
+            "key": "70",
+            "ServiceID": "70",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Society Name Reservation",
+            "ServiceType": {
+                "key": "1",
+                "value": "Automated"
+            },
+            "IsAvailable": {
+                "key": "1",
+                "value": "Published All (EF and Intranet)"
+            },
+            "IsPublished": "true",
+            "NeedPayment": {
+                "key": "1",
+                "value": "Free"
+            },
+            "CommitteeDecision": "false",
+            "RevenueCode": "123087",
+            "SortOrder": "1",
+            "ServiceProvider": "Road Transport and Safety Agency",
+            "ProcessID": null,
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null
+        },
+        {
+            "key": "71",
+            "ServiceID": "71",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Registration of Society",
+            "ServiceType": {
+                "key": "2",
+                "value": "Operator assisted"
+            },
+            "IsAvailable": {
+                "key": "2",
+                "value": "Published on EF"
+            },
+            "IsPublished": "true",
+            "ProcessID": {
+                "key": "6",
+                "value": "OCRS_Registry"
+            },
+            "NeedPayment": {
+                "key": "2",
+                "value": "Payment at beginning process (Registration Fee)"
+            },
+            "RevenueCode": "123087",
+            "SortOrder": "2",
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null,
+            "CommitteeDecision": null,
+            "ServiceProvider": null
+        },
+        {
+            "key": "72",
+            "ServiceID": "72",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Registration of a Branch of an Exempted Society",
+            "ServiceType": {
+                "key": "2",
+                "value": "Operator assisted"
+            },
+            "IsAvailable": {
+                "key": "2",
+                "value": "Published on EF"
+            },
+            "IsPublished": "true",
+            "ProcessID": {
+                "key": "6",
+                "value": "OCRS_Registry"
+            },
+            "NeedPayment": {
+                "key": "2",
+                "value": "Payment at beginning process (Registration Fee)"
+            },
+            "RevenueCode": "123087",
+            "SortOrder": "3",
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null,
+            "CommitteeDecision": null,
+            "ServiceProvider": null
+        },
+        {
+            "key": "73",
+            "ServiceID": "73",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Registration of a Branch of a Registered Society",
+            "ServiceType": {
+                "key": "2",
+                "value": "Operator assisted"
+            },
+            "IsAvailable": {
+                "key": "2",
+                "value": "Published on EF"
+            },
+            "IsPublished": "true",
+            "ProcessID": {
+                "key": "6",
+                "value": "OCRS_Registry"
+            },
+            "NeedPayment": {
+                "key": "2",
+                "value": "Payment at beginning process (Registration Fee)"
+            },
+            "RevenueCode": "123087",
+            "SortOrder": "4",
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null,
+            "CommitteeDecision": null,
+            "ServiceProvider": null
+        },
+        {
+            "key": "75",
+            "ServiceID": "75",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Amendments",
+            "ServiceType": {
+                "key": "2",
+                "value": "Operator assisted"
+            },
+            "IsAvailable": {
+                "key": "2",
+                "value": "Published on EF"
+            },
+            "IsPublished": "true",
+            "ProcessID": {
+                "key": "6",
+                "value": "OCRS_Registry"
+            },
+            "NeedPayment": {
+                "key": "2",
+                "value": "Payment at beginning process (Registration Fee)"
+            },
+            "RevenueCode": "123087",
+            "SortOrder": "6",
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null,
+            "CommitteeDecision": null,
+            "ServiceProvider": null
+        },
+        {
+            "key": "76",
+            "ServiceID": "76",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Exemption from Registration of a Society",
+            "ServiceType": {
+                "key": "2",
+                "value": "Operator assisted"
+            },
+            "IsAvailable": {
+                "key": "2",
+                "value": "Published on EF"
+            },
+            "IsPublished": "true",
+            "ProcessID": {
+                "key": "6",
+                "value": "OCRS_Registry"
+            },
+            "NeedPayment": {
+                "key": "2",
+                "value": "Payment at beginning process (Registration Fee)"
+            },
+            "RevenueCode": "123087",
+            "SortOrder": "7",
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null,
+            "CommitteeDecision": null,
+            "ServiceProvider": null
+        },
+        {
+            "key": "77",
+            "ServiceID": "77",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Reinstatement Registration",
+            "ServiceType": {
+                "key": "2",
+                "value": "Operator assisted"
+            },
+            "IsAvailable": {
+                "key": "1",
+                "value": "Published All (EF and Intranet)"
+            },
+            "IsPublished": "true",
+            "ProcessID": {
+                "key": "6",
+                "value": "OCRS_Registry"
+            },
+            "NeedPayment": {
+                "key": "2",
+                "value": "Payment at beginning process (Registration Fee)"
+            },
+            "RevenueCode": "123087",
+            "SortOrder": "8",
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null,
+            "CommitteeDecision": null,
+            "ServiceProvider": null
+        },
+        {
+            "key": "79",
+            "ServiceID": "79",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Issuance of Duplicate Certificate",
+            "ServiceType": {
+                "key": "2",
+                "value": "Operator assisted"
+            },
+            "IsAvailable": {
+                "key": "2",
+                "value": "Published on EF"
+            },
+            "IsPublished": "true",
+            "ProcessID": {
+                "key": "6",
+                "value": "OCRS_Registry"
+            },
+            "NeedPayment": {
+                "key": "2",
+                "value": "Payment at beginning process (Registration Fee)"
+            },
+            "RevenueCode": "123087",
+            "SortOrder": "9",
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null,
+            "CommitteeDecision": null,
+            "ServiceProvider": null
+        },
+        {
+            "key": "80",
+            "ServiceID": "80",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Search and Examination of Registers",
+            "ServiceType": {
+                "key": "1",
+                "value": "Automated"
+            },
+            "IsAvailable": {
+                "key": "1",
+                "value": "Published All (EF and Intranet)"
+            },
+            "IsPublished": "true",
+            "NeedPayment": {
+                "key": "2",
+                "value": "Payment at beginning process (Registration Fee)"
+            },
+            "CommitteeDecision": "false",
+            "RevenueCode": "123087",
+            "SortOrder": "10",
+            "ProcessID": null,
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null,
+            "ServiceProvider": null
+        },
+        {
+            "key": "81",
+            "ServiceID": "81",
+            "ApplicationId": {
+                "key": "14000000-1000-1000-1000-100000000000",
+                "value": "Registrar of Societies"
+            },
+            "Name": "Copy of Extract from Documents",
+            "ServiceType": {
+                "key": "2",
+                "value": "Operator assisted"
+            },
+            "IsAvailable": {
+                "key": "2",
+                "value": "Published on EF"
+            },
+            "IsPublished": "true",
+            "ProcessID": {
+                "key": "6",
+                "value": "OCRS_Registry"
+            },
+            "NeedPayment": {
+                "key": "2",
+                "value": "Payment at beginning process (Registration Fee)"
+            },
+            "RevenueCode": "123087",
+            "SortOrder": "11",
+            "ApprovalLevel2": null,
+            "ExpertReview": null,
+            "ExpertType": null,
+            "CommitteeDecision": null,
+            "ServiceProvider": null
+        }
+    ]
+}

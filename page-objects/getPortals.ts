@@ -1,5 +1,7 @@
-import { Locator, Page, Browser, BrowserContext, expect } from '@playwright/test';
+import { Locator, Page, Browser, BrowserContext, expect, chromium } from '@playwright/test';
 import { data } from './data';
+import * as fs from 'fs';
+
 
 export class GetPortals {
 
@@ -7,6 +9,10 @@ export class GetPortals {
     readonly browser: Browser;
     readonly context: BrowserContext;
     private responseJson: unknown;
+    urlTest_UI = "https://society.test.gsb.gov.zm/services";
+    urlTest_WEB = "https://srs.test.gsb.gov.zm/services";
+    apiTest = "https://societyapi.test.gsb.gov.zm/components/data?type=listBox&name=ServicesList&page=1&pageSize=10&parameters.filter.Name=";
+    //https://societyapi.test.gsb.gov.zm/components/data?type=listBox&name=ServicesList&page=1&pageSize=10&parameters.filter.Name=
     
 
     constructor (page: Page){
@@ -17,7 +23,7 @@ export class GetPortals {
     async open() {
         const responsePromise = this.page.waitForResponse(
             (response) =>
-                response.url().endsWith("https://society.test.gsb.gov.zm/services") &&
+                response.url().endsWith(this.urlTest_UI) &&
                 response.status() === 304,
         );
        // await this.page.goto('https://society.test.gsb.gov.zm/services');
@@ -37,9 +43,16 @@ export class GetPortals {
     }*/
 
     async society_UI_test (){
-        //await expect(this.page)
-        await this.page.goto('https://society.test.gsb.gov.zm/services');
+        
+        const browser = await chromium.launch({ headless: true });
+        const page = await browser.newPage();
+        //const responsePromise = page.waitForResponse((response) => response.url().includes(this.apiTest));
+        await this.page.goto(this.urlTest_UI);
         await this.page.waitForLoadState('load');
+        //const response = await responsePromise;
+        //const responseBody = await response.json();
+        //fs.writeFileSync('response.json', responseBody, 'utf-8');
+        //console.log('Response saved to response.json');
 
 
     }

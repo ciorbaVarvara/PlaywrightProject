@@ -1,47 +1,36 @@
 import { Locator, Page, expect } from '@playwright/test';
+import serviceList from './Sitemaps/servicesList.json';
+import { ServiceID } from './Sitemaps/servicesList';
 
 export class EServicesDirectory {
 
-    readonly page: Page
     readonly registrationOfSocietyService: Locator
     readonly btn: Locator
     readonly serviceNameText: Locator
+    readonly container: Locator;
+    readonly listBox: Locator;
+    readonly servicesListBox: Locator;
+    private page:Page;
 
-
-
-    constructor (page: Page){
-        this.page = page
-        this.registrationOfSocietyService = page.getByText('Registration of Society')
-        this.btn = page.getByText(' Start Application ')
-       // this.serviceNameText = page.locator('xpath=//p[contains(text(),"Registration of Society")]')
-
-
-
-
-
-    }
-
-    async selectServiceFromDirectory (){
-
-        await this.registrationOfSocietyService.waitFor({state: 'visible'});
-        await expect(this.registrationOfSocietyService).toBeVisible();
-        await expect(this.registrationOfSocietyService).toBeEnabled();
-
-        await this.registrationOfSocietyService.click();
-
-
-       // await expect(this.serviceNameText).toBeVisible()
-       // await expect(this.btn).toBeVisible({timeout:70000});
-       // await expect(this.btn).toBeEnabled({timeout:70000});
-
-       // this.btn.click();
+    constructor(container: Locator) {
+        this.container = container;
+        this.container = this.container.locator("es-container");
+        this.listBox = this.container.locator("es-list-box"); //4 list boxes we have on first page
+        this.servicesListBox = this.listBox.locator(`:has-text(" Services")`) //suntem in required listBox
+        this.registrationOfSocietyService = this.servicesListBox.getByText("Registration of Society")     
 
     }
 
+    async servcies () {
+        //await page.waitForResponse('https://societyapi.test.gsb.gov.zm/components/data?type=listBox&name=ServicesList&page=1&pageSize=10&parameters.filter.Name=');
 
+    }
 
+    async selectServiceFromDirectory() {
+       // const srv = new ServiceID(this.page);
+      //  await srv.getServiceByKey();
+      //  await this.registrationOfSocietyService.waitFor({ state: 'visible' });
+       // await this.registrationOfSocietyService.click();
 
-
-
-
+    }
 }
