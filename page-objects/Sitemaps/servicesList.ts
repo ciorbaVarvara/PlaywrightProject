@@ -23,13 +23,24 @@ export class ServiceID {
         this.registrationOfSocietyService = this.servicesListBox.getByText("Registration of Society")
     }
 
-    async getServiceByKey() {
+    async servicePassport () {
+        
+    }
+//ePassport api = https://societyapi.test.gsb.gov.zm/components?type=page&name=servicePassportPage&parameters.ServiceID=70
 
-        await this.page.waitForResponse('**/data?type=listBox&name=ServicesList&page=1&pageSize=10&parameters.filter.Name=');
-        const serviceItem = serviceList.items.find((item) => item.key == "70");
-        const serviceName = serviceItem?.Name;
-        console.log(serviceName);
-        // return serviceList.items.find((item)=>item.key == "70");
+    async getServiceByName(serviceName: string, servcieID: string) {
+
+        this.page.waitForResponse('**/data?type=listBox&name=ServicesList&page=1&pageSize=10&parameters.filter.Name=');
+        const serviceItem = serviceList.items.find((item) => item.key === servcieID);
+       // const inputField = this.page.locator(serviceItem.toString());
+        const name = serviceItem?.Name;
+        console.log(name);
+        const inputField = this.page.locator(`//*[contains(text(), "${serviceName}")]`);
+        await inputField.waitFor({state: "visible"});
+        await inputField.click();
+
+
+        //return serviceList.items.find((item)=>item.key == "70");
     }
 
     async selectServiceFromDirectory() {

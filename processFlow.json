@@ -1,0 +1,1166 @@
+{
+  "ticket": "934df4f0-5981-40e9-8614-dd1a13c35ba1",
+  "currentStep": {
+    "name": "Applicant Details",
+    "state": "Active",
+    "content": {
+      "title": "",
+      "formScript": {
+        "onLoad": "copyAddress(frm,'SameAddressPerson','ResidentialAddress','PostalAddress');\n\t\t\tcopyAddress(frm,'SameAddressBilling','ResidentialAddress','BillingAddress');\n\t\t\t/*TODO: remove*/\n\t\t\tserviceCategoryRepresentative(frm);\n\t\t\tbase.individualEditableOnLoad(frm);"
+      },
+      "content": [
+        {
+          "title": "Personal Data",
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "content": [
+                {
+                  "label": "ID Type",
+                  "textProperty": "Name",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "selectedValue": "1",
+                  "required": true,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Name",
+                      "title": "Name",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "1",
+                        "Name": "National Registration Card"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 50
+                  },
+                  "type": "comboBox",
+                  "uid": "7ff7b2e6-e2b1-4606-9445-a29d8160a04a-638703047865435288",
+                  "name": "IdentityType",
+                  "description": "",
+                  "cols": 6
+                },
+                {
+                  "value": "727110111",
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 50,
+                  "label": "Identity Document Number",
+                  "required": true,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "NRC",
+                  "description": "",
+                  "cols": 6
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "value": "Varvara",
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 255,
+                  "label": "First Name",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "FirstName",
+                  "description": "",
+                  "cols": 6
+                },
+                {
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 255,
+                  "label": "Middle Name",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "MiddleName",
+                  "description": "",
+                  "cols": 6
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "value": "Ciorba",
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 255,
+                  "label": "Last Name",
+                  "required": true,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "LastName",
+                  "description": "",
+                  "cols": 6
+                },
+                {
+                  "label": "Country of Citizenship",
+                  "textProperty": "Country",
+                  "valueProperty": "key",
+                  "allowFiltering": true,
+                  "allowMultiSelect": false,
+                  "selectedValue": "237",
+                  "required": true,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Country",
+                      "title": "Country",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "237",
+                        "Country": "Zambia"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 300
+                  },
+                  "type": "comboBox",
+                  "uid": "c84a1bdf-534a-4331-b6e6-840087881cc7-638703047865463374",
+                  "name": "Nationality",
+                  "description": "",
+                  "cols": 6
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "value": "1980-02-13T00:00:00",
+                  "label": "Date of Birth",
+                  "required": true,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "date",
+                  "name": "DateOfBirth",
+                  "description": "",
+                  "cols": 6
+                },
+                {
+                  "label": "Country of Birth",
+                  "textProperty": "Country",
+                  "valueProperty": "key",
+                  "allowFiltering": true,
+                  "allowMultiSelect": false,
+                  "selectedValue": "237",
+                  "required": true,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Country",
+                      "title": "Country",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "237",
+                        "Country": "Zambia"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 300
+                  },
+                  "type": "comboBox",
+                  "uid": "9c3ee8cd-0db9-4f85-863a-9c49fbad501b-638703047865508239",
+                  "name": "PlaceOfBirthAddressCountry",
+                  "description": "",
+                  "cols": 6
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "label": "Gender",
+                  "textProperty": "Name",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "selectedValue": "2",
+                  "required": true,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Name",
+                      "title": "Name",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "2",
+                        "Name": "Female"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 50
+                  },
+                  "type": "comboBox",
+                  "uid": "d0bff50e-62e4-45ba-931e-cb48a5b76862-638703047865536615",
+                  "name": "Gender",
+                  "description": "",
+                  "cols": 6
+                },
+                {
+                  "value": "+260555558555",
+                  "placeholder": "+(xxx)xxxxxxxx",
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "pattern": "^(([+|0](?:\\(?)+(?:[0-9]{1,3})(?:\\)?))+(?:[0-9\\s\\-]){5,15})$",
+                  "patternValidationMessage": "Please input a valid phone number",
+                  "maxLength": 50,
+                  "label": "Mobile Phone No.",
+                  "required": true,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "PhoneNumber",
+                  "description": "",
+                  "cols": 6
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "value": "ciorba.varvara96@gmail.com",
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "pattern": "(([^<>()[\\]\\\\.,;:\\s@\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\"]+)*)|.(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))",
+                  "patternValidationMessage": "Please enter a valid email address",
+                  "maxLength": 50,
+                  "label": "E-Mail Address",
+                  "required": true,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "Email",
+                  "description": "",
+                  "cols": 6
+                },
+                null
+              ],
+              "type": "row"
+            }
+          ],
+          "hidden": false,
+          "type": "section",
+          "name": "sec1340",
+          "cols": 2
+        },
+        {
+          "title": "Identity Document",
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "content": [
+                {
+                  "label": "Issued by Country",
+                  "textProperty": "Country",
+                  "valueProperty": "key",
+                  "allowFiltering": true,
+                  "allowMultiSelect": false,
+                  "selectedValue": "237",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Country",
+                      "title": "Country",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "237",
+                        "Country": "Zambia"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 300
+                  },
+                  "type": "comboBox",
+                  "uid": "373234ab-b3cb-4b3c-bfef-e59bbe209687-638703047865566430",
+                  "name": "PassportIssuedCn",
+                  "description": "",
+                  "cols": 6
+                },
+                {
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 100,
+                  "label": "Issued by Authority",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "PassportIssuedAt",
+                  "description": "",
+                  "cols": 6
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "value": "2020-05-26T00:00:00",
+                  "label": "Issue Date",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "date",
+                  "name": "PassportIssuedOn",
+                  "description": "",
+                  "cols": 6
+                },
+                {
+                  "label": "Expiration Date",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "date",
+                  "name": "PassportExpiredOn",
+                  "description": "",
+                  "cols": 6
+                }
+              ],
+              "type": "row"
+            }
+          ],
+          "hidden": false,
+          "type": "section",
+          "name": "secPassport",
+          "cols": 2
+        },
+        {
+          "title": "Address",
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "value": "rrr, LUAPULA PROVINCE, Zambia",
+              "size": "none",
+              "style": "default",
+              "align": "left",
+              "maxLength": 1000,
+              "label": "Residential Address",
+              "required": false,
+              "readonly": true,
+              "disabled": false,
+              "type": "textBox",
+              "name": "ResidentialAddress",
+              "description": "",
+              "cols": 8
+            },
+            null
+          ],
+          "hidden": true,
+          "type": "section",
+          "name": "sec1990",
+          "cols": 3
+        },
+        {
+          "title": "Residential Address",
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "content": [
+                {
+                  "label": "Country",
+                  "textProperty": "Country",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "selectedValue": "237",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Country",
+                      "title": "Country",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "237",
+                        "Country": "Zambia"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 300
+                  },
+                  "type": "comboBox",
+                  "uid": "9f877484-7e0c-4263-a54e-87615def8169-638703047865596956",
+                  "name": "ResidentialAddressCountry",
+                  "description": "",
+                  "cols": 4
+                },
+                {
+                  "label": "Province / State",
+                  "textProperty": "Province",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "selectedValue": "5",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Province",
+                      "title": "Province",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "5",
+                        "Province": "LUAPULA PROVINCE"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 50
+                  },
+                  "type": "comboBox",
+                  "uid": "8ac05e70-fb37-4d44-860d-f2a41a804f66-638703047865627998",
+                  "name": "ResidentialAddressProvince",
+                  "description": "",
+                  "cols": 4,
+                  "ref": "ResidentialAddressCountry",
+                  "parameters": {
+                    "ResidentialAddressCountry": "${ResidentialAddressCountry}"
+                  }
+                },
+                {
+                  "label": "District / City",
+                  "textProperty": "District",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "District",
+                      "title": "District",
+                      "cols": 12
+                    }
+                  ],
+                  "paging": {
+                    "pageSize": 50
+                  },
+                  "type": "comboBox",
+                  "uid": "f27d7fab-0a85-4091-9a9e-35ab630eb5c2-638703047865658555",
+                  "name": "ResidentialAddressDistrict",
+                  "description": "",
+                  "cols": 4,
+                  "ref": "ResidentialAddressProvince",
+                  "parameters": {
+                    "ResidentialAddressProvince": "${ResidentialAddressProvince}"
+                  }
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "value": "rrr",
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 100,
+                  "label": "Area / Village",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "ResidentialAddressCity",
+                  "description": "",
+                  "cols": 4
+                },
+                {
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 150,
+                  "label": "Plot, Street",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "ResidentialAddressLine",
+                  "description": "",
+                  "cols": 8
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "value": "12388888",
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 50,
+                  "label": "Postal / ZIP Code",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "ResidentialAddressZip",
+                  "description": "",
+                  "cols": 4
+                },
+                null,
+                null
+              ],
+              "type": "row"
+            }
+          ],
+          "hidden": false,
+          "type": "section",
+          "name": "secAddress1",
+          "cols": 3
+        },
+        {
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "format": "checkbox",
+              "value": true,
+              "label": "Same as Residential Address",
+              "required": false,
+              "readonly": false,
+              "disabled": false,
+              "type": "checkbox",
+              "name": "SameAddressPerson",
+              "description": "",
+              "cols": 6
+            }
+          ],
+          "hidden": false,
+          "type": "section",
+          "name": "sec1564",
+          "cols": 2
+        },
+        {
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "value": "rrr, LUAPULA PROVINCE, Zambia",
+              "size": "none",
+              "style": "default",
+              "align": "left",
+              "maxLength": 1000,
+              "label": "Postal Address",
+              "required": false,
+              "readonly": true,
+              "disabled": false,
+              "type": "textBox",
+              "name": "PostalAddress",
+              "description": "",
+              "cols": 8
+            },
+            null
+          ],
+          "hidden": true,
+          "type": "section",
+          "name": "sec1802",
+          "cols": 3
+        },
+        {
+          "title": "Postal Address",
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "content": [
+                {
+                  "label": "Country",
+                  "textProperty": "Country",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "selectedValue": "237",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Country",
+                      "title": "Country",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "237",
+                        "Country": "Zambia"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 300
+                  },
+                  "type": "comboBox",
+                  "uid": "8c5d2ed3-f689-4ec6-8461-cc9a6e8bea41-638703047865660508",
+                  "name": "PostalAddressCountry",
+                  "description": "",
+                  "cols": 4
+                },
+                {
+                  "label": "Province / State",
+                  "textProperty": "Province",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "selectedValue": "5",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Province",
+                      "title": "Province",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "5",
+                        "Province": "LUAPULA PROVINCE"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 50
+                  },
+                  "type": "comboBox",
+                  "uid": "1339a177-3dcf-4f32-b878-fd6d98a5d8ed-638703047865690043",
+                  "name": "PostalAddressProvince",
+                  "description": "",
+                  "cols": 4,
+                  "ref": "PostalAddressCountry",
+                  "parameters": {
+                    "PostalAddressCountry": "${PostalAddressCountry}"
+                  }
+                },
+                {
+                  "label": "District / City",
+                  "textProperty": "District",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "District",
+                      "title": "District",
+                      "cols": 12
+                    }
+                  ],
+                  "paging": {
+                    "pageSize": 50
+                  },
+                  "type": "comboBox",
+                  "uid": "aede6a8f-696a-4f00-9cba-0c03020cddc7-638703047865721663",
+                  "name": "PostalAddressDistrict",
+                  "description": "",
+                  "cols": 4,
+                  "ref": "PostalAddressProvince",
+                  "parameters": {
+                    "PostalAddressProvince": "${PostalAddressProvince}"
+                  }
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "value": "rrr",
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 150,
+                  "label": "Area / Village",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "PostalAddressCity",
+                  "description": "",
+                  "cols": 4
+                },
+                {
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 150,
+                  "label": "P. O. Box",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "PostalAddressLine",
+                  "description": "",
+                  "cols": 8
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "value": "12388888",
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 50,
+                  "label": "Postal / ZIP Code",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "PostalAddressZip",
+                  "description": "",
+                  "cols": 4
+                },
+                null,
+                null
+              ],
+              "type": "row"
+            }
+          ],
+          "hidden": false,
+          "type": "section",
+          "name": "secAddress2",
+          "cols": 3
+        },
+        {
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "format": "checkbox",
+              "value": false,
+              "label": "Same as Residential Address",
+              "required": false,
+              "readonly": false,
+              "disabled": false,
+              "type": "checkbox",
+              "name": "SameAddressBilling",
+              "description": "",
+              "cols": 6
+            },
+            null
+          ],
+          "hidden": true,
+          "type": "section",
+          "name": "sec1789",
+          "cols": 2
+        },
+        {
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "value": "Zambia",
+              "size": "none",
+              "style": "default",
+              "align": "left",
+              "maxLength": 1000,
+              "label": "Billing Address",
+              "required": false,
+              "readonly": true,
+              "disabled": true,
+              "type": "textBox",
+              "name": "BillingAddress",
+              "description": "",
+              "cols": 8
+            },
+            null
+          ],
+          "hidden": true,
+          "type": "section",
+          "name": "sec1925",
+          "cols": 3
+        },
+        {
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "content": [
+                {
+                  "label": "Country",
+                  "textProperty": "Country",
+                  "valueProperty": "key",
+                  "allowFiltering": true,
+                  "allowMultiSelect": false,
+                  "selectedValue": "237",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Country",
+                      "title": "Country",
+                      "cols": 12
+                    }
+                  ],
+                  "data": {
+                    "page": 1,
+                    "pageSize": 50,
+                    "items": [
+                      {
+                        "key": "237",
+                        "Country": "Zambia"
+                      }
+                    ]
+                  },
+                  "paging": {
+                    "pageSize": 300
+                  },
+                  "type": "comboBox",
+                  "uid": "f2e4aaf6-1908-4994-ba33-fbcf26d064d5-638703047865723876",
+                  "name": "BillingAddressCountry",
+                  "description": "",
+                  "cols": 4
+                },
+                {
+                  "label": "Province / State",
+                  "textProperty": "Province",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "Province",
+                      "title": "Province",
+                      "cols": 12
+                    }
+                  ],
+                  "paging": {
+                    "pageSize": 50
+                  },
+                  "type": "comboBox",
+                  "uid": "209624c9-5532-4481-af4a-882a6b719ad7-638703047865755868",
+                  "name": "BillingAddressProvince",
+                  "description": "",
+                  "cols": 4,
+                  "ref": "BillingAddressCountry",
+                  "parameters": {
+                    "BillingAddressCountry": "${BillingAddressCountry}"
+                  }
+                },
+                {
+                  "label": "District / City",
+                  "textProperty": "District",
+                  "valueProperty": "key",
+                  "allowFiltering": false,
+                  "allowMultiSelect": false,
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "columns": [
+                    {
+                      "displayType": "text",
+                      "name": "District",
+                      "title": "District",
+                      "cols": 12
+                    }
+                  ],
+                  "paging": {
+                    "pageSize": 50
+                  },
+                  "type": "comboBox",
+                  "uid": "89bca9bd-98e7-497c-9754-a62551d41fbd-638703047865757849",
+                  "name": "BillingAddressDistrict",
+                  "description": "",
+                  "cols": 4,
+                  "ref": "BillingAddressProvince",
+                  "parameters": {
+                    "BillingAddressProvince": "${BillingAddressProvince}"
+                  }
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 100,
+                  "label": "Area / Village",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "BillingAddressCity",
+                  "description": "",
+                  "cols": 4
+                },
+                {
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 150,
+                  "label": "Plot, Street",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "BillingAddressLine",
+                  "description": "",
+                  "cols": 8
+                }
+              ],
+              "type": "row"
+            },
+            {
+              "content": [
+                {
+                  "size": "none",
+                  "style": "default",
+                  "align": "left",
+                  "maxLength": 50,
+                  "label": "Postal / ZIP Code",
+                  "required": false,
+                  "readonly": false,
+                  "disabled": false,
+                  "type": "textBox",
+                  "name": "BillingAddressZip",
+                  "description": "",
+                  "cols": 4
+                },
+                null,
+                null
+              ],
+              "type": "row"
+            }
+          ],
+          "hidden": true,
+          "type": "section",
+          "name": "secAddress3",
+          "cols": 3
+        },
+        {
+          "title": "Hidden",
+          "allowHeaderClick": false,
+          "content": [
+            {
+              "label": "Service Category Id",
+              "textProperty": "CategoryName",
+              "valueProperty": "key",
+              "allowFiltering": false,
+              "allowMultiSelect": false,
+              "required": false,
+              "readonly": false,
+              "disabled": false,
+              "columns": [
+                {
+                  "displayType": "text",
+                  "name": "CategoryName",
+                  "title": "CategoryName",
+                  "cols": 12
+                }
+              ],
+              "paging": {
+                "pageSize": 50
+              },
+              "type": "comboBox",
+              "uid": "44292473-d97b-4048-9bc9-9eb6b37c81f7-638703047865856412",
+              "name": "ServiceCategoryId",
+              "description": "",
+              "cols": 6,
+              "ref": "ServiceID",
+              "parameters": {
+                "ServiceID": "${ServiceID}"
+              }
+            },
+            {
+              "label": "Service Name",
+              "textProperty": "Name",
+              "valueProperty": "key",
+              "allowFiltering": true,
+              "allowMultiSelect": false,
+              "required": false,
+              "readonly": false,
+              "disabled": false,
+              "columns": [
+                {
+                  "displayType": "text",
+                  "name": "Name",
+                  "title": "Name",
+                  "cols": 12
+                }
+              ],
+              "paging": {
+                "pageSize": 50
+              },
+              "type": "comboBox",
+              "uid": "f9f45771-cd8e-4bf3-8622-b376b5fd06a2-638703047865860881",
+              "name": "ServiceID",
+              "description": "",
+              "cols": 6
+            }
+          ],
+          "hidden": true,
+          "type": "section",
+          "name": "sec1466",
+          "cols": 2
+        }
+      ],
+      "type": "form",
+      "name": "EIndividualEditable"
+    },
+    "allowedActions": [
+      {
+        "name": "Cancel",
+        "title": "Cancel"
+      },
+      {
+        "name": "SaveAsDraft",
+        "title": "Save"
+      },
+      {
+        "name": "Back",
+        "title": "Previous"
+      },
+      {
+        "name": "Next",
+        "title": "Next"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "name": "RecordState1",
+      "title": "Fill Application",
+      "state": "Current",
+      "allowedActions": [],
+      "subSteps": [
+        {
+          "name": "CASE.Create",
+          "title": "Case Details",
+          "state": "Completed",
+          "allowedActions": []
+        },
+        {
+          "name": "IndividualEditable",
+          "title": "Applicant Details",
+          "state": "Active",
+          "allowedActions": []
+        }
+      ]
+    },
+    {
+      "name": "RecordState3",
+      "title": "Pay",
+      "state": "Draft",
+      "allowedActions": [],
+      "subSteps": []
+    },
+    {
+      "name": "RecordState4",
+      "title": "Submit",
+      "state": "Draft",
+      "allowedActions": [],
+      "subSteps": []
+    }
+  ],
+  "type": "processFlow"
+}

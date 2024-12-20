@@ -8,15 +8,19 @@ export class SignInTo {
     readonly loginWithZamPassBtn: Locator
     readonly userNameField: Locator
     readonly passwordField: Locator
+    readonly container: Locator;
+    readonly coatOfArmsImg: Locator;
 
 
     constructor (page: Page){
-     this.page = page
-     this.signInIcon = page.getByText('Sign In')
-     this.loginWithZamPassBtn = page.getByText(' Login with ZamPass ')
-     this.userNameField = page.locator('#identifier')
-     this.passwordField = page.locator('#password')
-     this.signInBtn = page.locator('xpath=//button[@type="submit"]')
+     this.page = page;
+     this.container = this.page.locator('//div[@class="tab-body"]');
+     this.signInIcon = this.page.getByText('Sign In')
+     this.loginWithZamPassBtn = this.page.getByText(' Login with ZamPass ')
+     this.userNameField = this.container.locator('#identifier')
+     this.passwordField = this.container.locator('#password')
+     this.signInBtn = this.page.locator('xpath=//button[@type="submit"]')
+     this.coatOfArmsImg = this.page.locator('//img').first();
 
     }
 
@@ -25,6 +29,8 @@ export class SignInTo {
         await this.signInIcon.click()
         await this.loginWithZamPassBtn.waitFor({state: "visible"})
         await this.loginWithZamPassBtn.click()
+        
+        await this.coatOfArmsImg.waitFor({state: "visible"});
         await this.userNameField.waitFor({state: "visible"})
         await this.userNameField.fill('varvara.ciorba')
         await this.passwordField.waitFor({state: "visible"})

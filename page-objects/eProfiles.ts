@@ -1,4 +1,5 @@
 import { Locator, Page, expect } from '@playwright/test';
+import { SignInTo } from './signInPortals';
 
 export class GetProfile {
 
@@ -6,29 +7,37 @@ export class GetProfile {
     readonly personalProfileSelect: Locator
     readonly menuProfiles: Locator
     private responseJson: unknown;
+    readonly coatOfArmsImg: Locator;
 
     constructor(page: Page) {
         this.page = page;
-        this.menuProfiles = page.locator('es-corporate-account');
-        this.personalProfileSelect = this.menuProfiles.locator('text=" Personal profile "');
+        this.menuProfiles = page.locator('//es-corporate-account');
+        this.personalProfileSelect = this.menuProfiles.locator('//*[contains(text(), "Personal profile")]');
+        this.coatOfArmsImg = this.page.locator('img').first();
     }
 
     async corporateAccountComponentIsAvailable() {
-        await this.page.waitForResponse("https://societyapi.test.gsb.gov.zm/components?type=corporateAccount");
 
-        const responsePromise = this.page.waitForResponse(
-            (response) =>
-                response.url().endsWith("https://societyapi.test.gsb.gov.zm/components?type=corporateAccount") &&
-                response.status() === 200,
+        await this.page.waitForLoadState('load');
+        await this.coatOfArmsImg.waitFor({state: "visible"});
+        const responsePromise = this.page.waitForResponse((response) =>
+            response.url().includes("https://societyapi.test.gsb.gov.zm/components?type=corporateAccount")
         );
-        this.selectProfile();
+
+        //actions
+       await this.selectProfile();
+
         const response = await responsePromise;
-        this.responseJson = await response.json();
+        expect(response.status()).toBe(200);
+        const jsonResponse = await response.json();
 
     }
 
     async selectProfile() {
+        await this.page.waitForLoadState('load');
+        await this.coatOfArmsImg.waitFor({state: "visible"});
         await this.menuProfiles.waitFor({ state: "visible" });
+        await this.personalProfileSelect.waitFor({ state: "visible"});
         await this.personalProfileSelect.click();
     }
 

@@ -1,0 +1,1493 @@
+{
+    "processName": "BASE:E_Apply",
+    "ticket": "10684039-9ff7-4b70-b02e-c385e1ae6d28",
+    "currentStep": {
+        "name": "Case Details",
+        "state": "Active",
+        "content": {
+            "title": "",
+            "formScript": {
+                "onLoad": "ECaseCreate_onLoad(frm);\n        serviceCategoryChanged(frm);\n        caseTypeChanged(frm);\n        applyTypeChanged(frm);\n        representativeTypeChanged(frm);\n        isRepresentativeChanged(frm);\n        corporateType(frm);\n        ORGNRChanged(frm);\n        NRCChanged(frm);\n        WarningMessageCheck(frm);\n        /*base.test(frm);*/"
+            },
+            "content": [
+                {
+                    "title": "CASE DETAILS",
+                    "content": [
+                        {
+                            "content": [
+                                {
+                                    "placeholder": "AUTO-NUMBERED",
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "Case No.",
+                                    "maxLength": 100,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "CaseNumber",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "label": "Date of Submission",
+                                    "value": "2024-12-12T08:30:01",
+                                    "required": false,
+                                    "readonly": false,
+                                    "disabled": true,
+                                    "type": "dateTime",
+                                    "name": "SubmittedDate",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "label": "Service Provider (Agency)",
+                                    "textProperty": "ApplicationName",
+                                    "valueProperty": "key",
+                                    "allowFiltering": true,
+                                    "required": true,
+                                    "allowMultiSelect": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "selectedValue": "14000000-1000-1000-1000-100000000000",
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "ApplicationName",
+                                            "title": "Name",
+                                            "cols": 4
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "ApplicationType",
+                                            "title": "Application Type",
+                                            "displayProperty": "value",
+                                            "cols": 4
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "ShortName",
+                                            "title": "Short Name",
+                                            "cols": 4
+                                        }
+                                    ],
+                                    "data": {
+                                        "page": 1,
+                                        "pageSize": 50,
+                                        "items": [
+                                            {
+                                                "key": "14000000-1000-1000-1000-100000000000",
+                                                "ApplicationName": "Registrar of Societies",
+                                                "ApplicationType": {
+                                                    "key": "3",
+                                                    "value": "Department"
+                                                },
+                                                "ShortName": "SRS"
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "2e051d15-382b-497c-9c5b-c76066bdd353-638695890012886892",
+                                    "name": "ApplicationId",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "label": "Service Location (Province)",
+                                    "textProperty": "Province",
+                                    "valueProperty": "key",
+                                    "allowFiltering": false,
+                                    "required": true,
+                                    "allowMultiSelect": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "selectedValue": "1",
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Province",
+                                            "title": "Province",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "data": {
+                                        "page": 1,
+                                        "pageSize": 50,
+                                        "items": [
+                                            {
+                                                "key": "1",
+                                                "Province": "LUSAKA PROVINCE"
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "3ffcaf5e-5321-4085-a21d-7ef8a6b8c4c1-638695890012923747",
+                                    "name": "ServiceStationProvince",
+                                    "description": "",
+                                    "cols": 6,
+                                    "ref": "ServiceID",
+                                    "parameters": {
+                                        "ServiceID": "${ServiceID}"
+                                    }
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "label": "District",
+                                    "textProperty": "District",
+                                    "valueProperty": "key",
+                                    "allowFiltering": false,
+                                    "required": true,
+                                    "allowMultiSelect": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "selectedValue": "51",
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "District",
+                                            "title": "District",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "data": {
+                                        "page": 1,
+                                        "pageSize": 50,
+                                        "items": [
+                                            {
+                                                "key": "51",
+                                                "District": "LUSAKA"
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "5c2167ee-8f7e-43ee-ae83-d10085f7d7ab-638695890012957197",
+                                    "name": "ServiceStationDistrict",
+                                    "description": "",
+                                    "cols": 6,
+                                    "ref": "ServiceStationProvince",
+                                    "parameters": {
+                                        "ServiceID": "${ServiceID}",
+                                        "ServiceStationProvince": "${ServiceStationProvince}"
+                                    }
+                                },
+                                {
+                                    "label": "Station (Post)",
+                                    "textProperty": "Name",
+                                    "valueProperty": "key",
+                                    "allowFiltering": false,
+                                    "required": true,
+                                    "allowMultiSelect": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "selectedValue": "00000000-0000-0000-0000-000000000011",
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Name",
+                                            "title": "Name",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "data": {
+                                        "page": 1,
+                                        "pageSize": 50,
+                                        "items": [
+                                            {
+                                                "key": "00000000-0000-0000-0000-000000000011",
+                                                "Name": "GSB Online System",
+                                                "SortOrder": null
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "d985a1a1-c650-46d8-b7c2-54219283c306-638695890012992580",
+                                    "name": "ServiceStationTeamId",
+                                    "description": "",
+                                    "cols": 6,
+                                    "ref": "ServiceStationDistrict",
+                                    "parameters": {
+                                        "ServiceID": "${ServiceID}",
+                                        "ServiceStationDistrict": "${ServiceStationDistrict}"
+                                    }
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "label": "Service Name",
+                                    "textProperty": "Name",
+                                    "valueProperty": "key",
+                                    "allowFiltering": true,
+                                    "required": true,
+                                    "allowMultiSelect": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "selectedValue": "70",
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Name",
+                                            "title": "Name",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "data": {
+                                        "page": 1,
+                                        "pageSize": 50,
+                                        "items": [
+                                            {
+                                                "key": "70",
+                                                "Name": "Society Name Reservation"
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "639a931b-0e10-46f1-97f0-410fa40179d0-638695890013031934",
+                                    "name": "ServiceID",
+                                    "description": "",
+                                    "cols": 12
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "label": "Service Category",
+                                    "textProperty": "CategoryName",
+                                    "valueProperty": "key",
+                                    "allowFiltering": false,
+                                    "required": true,
+                                    "allowMultiSelect": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "selectedValue": "1",
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "CategoryName",
+                                            "title": "CategoryName",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "data": {
+                                        "page": 1,
+                                        "pageSize": 50,
+                                        "items": [
+                                            {
+                                                "key": "1",
+                                                "CategoryName": "Society Name Reservation"
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "7f4cca28-1116-432c-abef-e283d1340536-638695890013066345",
+                                    "name": "ServiceCategoryId",
+                                    "description": "",
+                                    "cols": 6,
+                                    "ref": "ServiceID",
+                                    "parameters": {
+                                        "ServiceID": "${ServiceID}"
+                                    },
+                                    "componentScript": {
+                                        "onValueChange": "serviceCategoryChanged(frm);"
+                                    }
+                                },
+                                {
+                                    "label": "Service Type",
+                                    "textProperty": "Name",
+                                    "valueProperty": "key",
+                                    "allowFiltering": false,
+                                    "required": true,
+                                    "allowMultiSelect": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "selectedValue": "1",
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Name",
+                                            "title": "Type",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "data": {
+                                        "page": 1,
+                                        "pageSize": 50,
+                                        "items": [
+                                            {
+                                                "key": "1",
+                                                "Name": "New"
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "599d6970-8113-42bd-a486-0dcd16f9bd0d-638695890013100432",
+                                    "name": "CaseType",
+                                    "description": "",
+                                    "cols": 6,
+                                    "ref": "ServiceID",
+                                    "parameters": {
+                                        "ServiceID": "${ServiceID}"
+                                    },
+                                    "componentScript": {
+                                        "onValueChange": "caseTypeChanged(frm);"
+                                    }
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "label": "Is Filing on behalf of someone else?",
+                                    "textProperty": "Name",
+                                    "valueProperty": "key",
+                                    "allowFiltering": false,
+                                    "required": true,
+                                    "allowMultiSelect": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "selectedValue": "0",
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Name",
+                                            "title": "Name",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "data": {
+                                        "page": 1,
+                                        "pageSize": 50,
+                                        "items": [
+                                            {
+                                                "key": "0",
+                                                "Name": "No"
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "ba9d0acf-da6c-49f9-8ca4-3a209774f517-638695890013132261",
+                                    "name": "IsRepresentative",
+                                    "description": "",
+                                    "cols": 6,
+                                    "ref": "ServiceID",
+                                    "parameters": {
+                                        "CaseType": "${CaseType}",
+                                        "ServiceID": "${ServiceID}"
+                                    },
+                                    "componentScript": {
+                                        "onValueChange": "isRepresentativeChanged(frm);CheckAllowNext(frm);"
+                                    }
+                                },
+                                {
+                                    "label": "Applicant type (Individual or Organisation)",
+                                    "textProperty": "Name",
+                                    "valueProperty": "key",
+                                    "allowFiltering": false,
+                                    "required": true,
+                                    "allowMultiSelect": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "selectedValue": "1",
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Name",
+                                            "title": "Name",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "data": {
+                                        "page": 1,
+                                        "pageSize": 50,
+                                        "items": [
+                                            {
+                                                "key": "1",
+                                                "Name": "Individual"
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "fd0bd61e-9f7b-4a99-86fd-04f0c5ab9212-638695890013163272",
+                                    "name": "ApplyType",
+                                    "description": "",
+                                    "cols": 6,
+                                    "ref": "ServiceID",
+                                    "parameters": {
+                                        "ServiceID": "${ServiceID}"
+                                    },
+                                    "componentScript": {
+                                        "onValueChange": "applyTypeChanged(frm);CheckAllowNext(frm);"
+                                    }
+                                }
+                            ],
+                            "type": "row"
+                        }
+                    ],
+                    "type": "section",
+                    "name": "sec_info",
+                    "cols": 2,
+                    "hidden": false
+                },
+                {
+                    "content": [
+                        {
+                            "content": [
+                                {
+                                    "value": "727110111",
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "User Identity",
+                                    "maxLength": 15,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "UserIdentity",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                null
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "value": "Varvara",
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "User First Name",
+                                    "maxLength": 50,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "UserFirstName",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "value": "Ciorba",
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "User Last Name",
+                                    "maxLength": 50,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "UserLastName",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        }
+                    ],
+                    "type": "section",
+                    "name": "secCUSTOMER",
+                    "cols": 2,
+                    "hidden": true
+                },
+                {
+                    "content": [
+                        {
+                            "content": [
+                                {
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "Organization Identity",
+                                    "maxLength": 25,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "ORGNR_Corporate",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                null
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "Organization Name",
+                                    "maxLength": 255,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "EntityReceivedFullName_Corporate",
+                                    "description": "",
+                                    "cols": 12
+                                }
+                            ],
+                            "type": "row"
+                        }
+                    ],
+                    "type": "section",
+                    "name": "secRepresentOrg",
+                    "cols": 2,
+                    "hidden": true
+                },
+                {
+                    "content": [
+                        {
+                            "content": [
+                                {
+                                    "label": "Applicant Organization",
+                                    "notFoundMessage": "Record not found",
+                                    "value": "",
+                                    "required": false,
+                                    "disabled": false,
+                                    "type": "query",
+                                    "uid": "f57e4eed-2c4f-43a3-bcf7-b006526c127c-638695890013197441",
+                                    "name": "ORGNR",
+                                    "description": "",
+                                    "cols": 6,
+                                    "parameters": {
+                                        "BIN": "${ORGNR}",
+                                        "lookupId": "${EntityID}",
+                                        "saveResult": "true",
+                                        "serviceId": "${ServiceID}",
+                                        "fromLocalDB": "${SearchEntityLocalDB}",
+                                        "output": "EntityReceivedFullName=[Name],EntityID=[EntityID],EntityReceivedOrgTypeId=[OrgTypeId],WarningMessage=[WarningMessage],WarningField=ORGNR"
+                                    },
+                                    "componentScript": {
+                                        "onValueChange": "ORGNRChanged(frm);"
+                                    }
+                                },
+                                null
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "value": "<p><i>Registration Number (e.g. PACRA No.)</i></p>",
+                                    "type": "text",
+                                    "name": "control_18",
+                                    "cols": 12
+                                },
+                                null
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "Applicant Name",
+                                    "maxLength": 100,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "EntityReceivedFullName",
+                                    "description": "",
+                                    "cols": 12
+                                }
+                            ],
+                            "type": "row"
+                        }
+                    ],
+                    "type": "section",
+                    "name": "secORGNR",
+                    "cols": 2,
+                    "hidden": true
+                },
+                {
+                    "content": [
+                        {
+                            "content": [
+                                {
+                                    "label": "ID Type",
+                                    "textProperty": "Name",
+                                    "valueProperty": "key",
+                                    "allowFiltering": false,
+                                    "required": false,
+                                    "allowMultiSelect": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Name",
+                                            "title": "Name",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "d7460d27-a159-466c-b37d-9c6616252148-638695890013199915",
+                                    "name": "ApplicantIdentityType",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "label": "Issued by Country",
+                                    "textProperty": "Country",
+                                    "valueProperty": "key",
+                                    "allowFiltering": true,
+                                    "required": false,
+                                    "allowMultiSelect": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Country",
+                                            "title": "Country",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "dc597bbe-517e-45af-9a2f-c84d8c0379f4-638695890013201610",
+                                    "name": "ApplicantIdentityIssuedBy",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "label": "Identity Document Number",
+                                    "notFoundMessage": "Record not found",
+                                    "value": "",
+                                    "required": false,
+                                    "disabled": false,
+                                    "type": "query",
+                                    "uid": "6bac7315-118c-4249-b169-8c2a144da06e-638695890013202062",
+                                    "name": "NRC",
+                                    "description": "",
+                                    "cols": 6,
+                                    "parameters": {
+                                        "nrc": "${NRC}",
+                                        "identityCountry": "${ApplicantIdentityIssuedBy}",
+                                        "identityType": "${ApplicantIdentityType}",
+                                        "applicantId": "${ApplicantID}",
+                                        "fromLocalDB": "${SearchPersonLocalDB}",
+                                        "output": "ApplicantFirstName=[FirstName],ApplicantLastName=[LastName],ApplicantID=[GsbID],WarningMessage=[WarningMessage],WarningField=NRC,ApplicantChanged=true"
+                                    },
+                                    "componentScript": {
+                                        "onValueChange": "NRCChanged(frm);"
+                                    },
+                                    "messages": [
+                                        {
+                                            "message": "Please introduce the Applicant’s Full Name at the 'Applicant Details' step",
+                                            "type": "warning",
+                                            "position": "bottom",
+                                            "hidden": true,
+                                            "propertyConverters": {
+                                                "hidden": {
+                                                    "${WarningMessage} === '' && ${WarningField} === '' ": true,
+                                                    "${WarningMessage} !== '' && ${WarningField} === 'NRC' ": false
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                null
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "Applicant First Name",
+                                    "maxLength": 50,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "ApplicantFirstName",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "Applicant Last Name",
+                                    "maxLength": 50,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "ApplicantLastName",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        }
+                    ],
+                    "type": "section",
+                    "name": "secRepresentPerson",
+                    "cols": 2,
+                    "hidden": true
+                },
+                {
+                    "content": [
+                        {
+                            "content": [
+                                {
+                                    "label": "Permit or Notice Id",
+                                    "notFoundMessage": "Record not found",
+                                    "value": "",
+                                    "required": false,
+                                    "disabled": false,
+                                    "type": "query",
+                                    "uid": "2daec56e-0bc6-40d8-b861-a62993a17d8b-638695890013202549",
+                                    "name": "PermitNo",
+                                    "description": "",
+                                    "cols": 6,
+                                    "parameters": {
+                                        "PermitNo": "${PermitNo}",
+                                        "PermitType": "${ServiceID}",
+                                        "OwnerID": "${ApplicantID}"
+                                    }
+                                },
+                                {
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "Permit / Action Description",
+                                    "maxLength": 100,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "PermitTitle",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "label": "Related Case Number",
+                                    "textProperty": "CaseNumber",
+                                    "valueProperty": "key",
+                                    "allowFiltering": true,
+                                    "required": false,
+                                    "allowMultiSelect": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "CaseNumber",
+                                            "title": "Case Number",
+                                            "cols": 3
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "ServiceID",
+                                            "title": "Service Type",
+                                            "displayProperty": "value",
+                                            "cols": 3
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "SM_Status",
+                                            "title": "Status",
+                                            "displayProperty": "value",
+                                            "cols": 3
+                                        },
+                                        {
+                                            "displayType": "dateTime",
+                                            "name": "CreatedOn",
+                                            "title": "Created On",
+                                            "cols": 3
+                                        }
+                                    ],
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "4dc85af9-535e-47ba-8013-b40b3d928ac1-638695890013216281",
+                                    "name": "RelatedCaseID",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "Related Case Title",
+                                    "maxLength": 100,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "RelatedCaseTitle",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        }
+                    ],
+                    "type": "section",
+                    "name": "secREFERENCE",
+                    "cols": 2,
+                    "hidden": true
+                },
+                {
+                    "content": [
+                        {
+                            "label": "WarningMessage",
+                            "maxLength": 250,
+                            "rows": 1,
+                            "required": false,
+                            "readonly": true,
+                            "disabled": false,
+                            "type": "textarea",
+                            "name": "WarningMessage",
+                            "description": "",
+                            "cols": 6
+                        },
+                        {
+                            "size": "none",
+                            "style": "default",
+                            "align": "left",
+                            "label": "WarningField",
+                            "maxLength": 50,
+                            "required": false,
+                            "readonly": true,
+                            "disabled": false,
+                            "type": "textBox",
+                            "name": "WarningField",
+                            "description": "",
+                            "cols": 6
+                        }
+                    ],
+                    "type": "section",
+                    "name": "secWarningMessage",
+                    "cols": 2,
+                    "hidden": true
+                },
+                {
+                    "title": "SIGNATURE",
+                    "content": [
+                        {
+                            "label": "Date",
+                            "value": "2024-12-12T08:30:01",
+                            "required": true,
+                            "readonly": true,
+                            "disabled": false,
+                            "type": "dateTime",
+                            "name": "CreatedOn",
+                            "description": "",
+                            "cols": 6
+                        }
+                    ],
+                    "type": "section",
+                    "name": "sec1652",
+                    "cols": 2,
+                    "hidden": true
+                },
+                {
+                    "title": "Hidden",
+                    "content": [
+                        {
+                            "content": [
+                                {
+                                    "label": "Representative type (Individual or Corporate)",
+                                    "textProperty": "text",
+                                    "valueProperty": "value",
+                                    "allowFiltering": false,
+                                    "required": false,
+                                    "allowMultiSelect": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "columns": [],
+                                    "data": {
+                                        "total": 2,
+                                        "page": 0,
+                                        "pageSize": 0,
+                                        "items": [
+                                            {
+                                                "text": "Individual",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "text": "Organisation",
+                                                "value": "2"
+                                            }
+                                        ]
+                                    },
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "2a0ee98f-db9b-4ddc-aa5a-33915c0ecb42-638695890013217370",
+                                    "name": "RepresentativeType",
+                                    "description": "",
+                                    "cols": 6,
+                                    "componentScript": {
+                                        "onValueChange": "representativeTypeChanged(frm);"
+                                    }
+                                },
+                                {
+                                    "value": false,
+                                    "label": "AllowGoNext",
+                                    "options": [
+                                        {
+                                            "label": "Yes",
+                                            "value": true,
+                                            "readonly": false,
+                                            "disabled": false
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": false,
+                                            "readonly": false,
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "required": true,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "radioGroup",
+                                    "name": "AllowGoNext",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "label": "ApplicantID",
+                                    "textProperty": "Full_Name",
+                                    "valueProperty": "key",
+                                    "allowFiltering": true,
+                                    "required": false,
+                                    "allowMultiSelect": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Full_Name",
+                                            "title": "Name",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "NRC",
+                                            "title": "NRC No",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "IdentityType",
+                                            "title": "Identity Type",
+                                            "displayProperty": "value",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "date",
+                                            "name": "DateOfBirth",
+                                            "title": "Date Of Birth",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "Nationality",
+                                            "title": "Nationality",
+                                            "displayProperty": "value",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "PhoneMobile",
+                                            "title": "Phone Mobile",
+                                            "cols": 2
+                                        }
+                                    ],
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "879fa25e-2d14-4621-a618-41f298307da4-638695890013222186",
+                                    "name": "ApplicantID",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "label": "ORGNR_Corporate ID",
+                                    "textProperty": "EntityName",
+                                    "valueProperty": "key",
+                                    "allowFiltering": true,
+                                    "required": false,
+                                    "allowMultiSelect": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "EntityName",
+                                            "title": "Name",
+                                            "cols": 6
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "EntityNumber",
+                                            "title": "Registration No.",
+                                            "cols": 6
+                                        }
+                                    ],
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "7982513f-c722-46e1-ba78-ed94593be66b-638695890013228434",
+                                    "name": "ORGNR_CorporateID",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "label": "RepresentativeID",
+                                    "textProperty": "Full_Name",
+                                    "valueProperty": "key",
+                                    "allowFiltering": true,
+                                    "required": false,
+                                    "allowMultiSelect": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Full_Name",
+                                            "title": "Name",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "NRC",
+                                            "title": "NRC No",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "IdentityType",
+                                            "title": "Identity Type",
+                                            "displayProperty": "value",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "date",
+                                            "name": "DateOfBirth",
+                                            "title": "Date Of Birth",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "Nationality",
+                                            "title": "Nationality",
+                                            "displayProperty": "value",
+                                            "cols": 2
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "PhoneMobile",
+                                            "title": "Phone Mobile",
+                                            "cols": 2
+                                        }
+                                    ],
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "3ff57131-6341-405e-a39d-be2c96498e85-638695890013233139",
+                                    "name": "RepresentativeID",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "label": "EntityID",
+                                    "textProperty": "EntityName",
+                                    "valueProperty": "key",
+                                    "allowFiltering": true,
+                                    "required": false,
+                                    "allowMultiSelect": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "EntityName",
+                                            "title": "Name",
+                                            "cols": 6
+                                        },
+                                        {
+                                            "displayType": "text",
+                                            "name": "EntityNumber",
+                                            "title": "Registration No.",
+                                            "cols": 6
+                                        }
+                                    ],
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "3c05e6ee-88cc-4156-9aad-189ffd81f7c3-638695890013240762",
+                                    "name": "EntityID",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "max": 2147483647,
+                                    "min": -2147483648,
+                                    "value": 237,
+                                    "label": "UserIdentityIssuedBy",
+                                    "required": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "type": "number",
+                                    "name": "UserIdentityIssuedBy",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "value": "ce533c22-f305-4d52-8961-043438b33794",
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "UserIdentityID",
+                                    "required": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "UserIdentityID",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "max": 2147483647,
+                                    "min": -2147483648,
+                                    "value": 1,
+                                    "label": "UserIdentityType",
+                                    "required": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "type": "number",
+                                    "name": "UserIdentityType",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "value": true,
+                                    "label": "ApplicantChanged",
+                                    "options": [
+                                        {
+                                            "label": "Yes",
+                                            "value": true,
+                                            "readonly": false,
+                                            "disabled": false
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": false,
+                                            "readonly": false,
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "required": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "type": "radioGroup",
+                                    "name": "ApplicantChanged",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "UserMiddleName",
+                                    "maxLength": 50,
+                                    "required": false,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "UserMiddleName",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "value": false,
+                                    "label": "Deleted",
+                                    "options": [
+                                        {
+                                            "label": "Yes",
+                                            "value": true,
+                                            "readonly": false,
+                                            "disabled": false
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": false,
+                                            "readonly": false,
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "required": true,
+                                    "readonly": false,
+                                    "disabled": false,
+                                    "type": "radioGroup",
+                                    "name": "Deleted",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "value": false,
+                                    "label": "SearchPersonLocalDB",
+                                    "options": [
+                                        {
+                                            "label": "Yes",
+                                            "value": true,
+                                            "readonly": false,
+                                            "disabled": false
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": false,
+                                            "readonly": false,
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "radioGroup",
+                                    "name": "SearchPersonLocalDB",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "value": false,
+                                    "label": "SearchEntityLocalDB",
+                                    "options": [
+                                        {
+                                            "label": "Yes",
+                                            "value": true,
+                                            "readonly": false,
+                                            "disabled": false
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": false,
+                                            "readonly": false,
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "radioGroup",
+                                    "name": "SearchEntityLocalDB",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "size": "none",
+                                    "style": "default",
+                                    "align": "left",
+                                    "label": "EntityReceivedOrgTypeId",
+                                    "maxLength": 12,
+                                    "required": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "type": "textBox",
+                                    "name": "EntityReceivedOrgTypeId",
+                                    "description": "",
+                                    "cols": 6
+                                },
+                                {
+                                    "label": "OrgTypeId",
+                                    "textProperty": "Name",
+                                    "valueProperty": "key",
+                                    "allowFiltering": false,
+                                    "required": false,
+                                    "allowMultiSelect": false,
+                                    "readonly": true,
+                                    "disabled": false,
+                                    "columns": [
+                                        {
+                                            "displayType": "text",
+                                            "name": "Name",
+                                            "title": "Name",
+                                            "cols": 12
+                                        }
+                                    ],
+                                    "paging": {
+                                        "pageSize": 50
+                                    },
+                                    "type": "comboBox",
+                                    "uid": "f9bbcbb2-4b01-40ba-b580-db7f942fe7e4-638695890013242432",
+                                    "name": "OrgTypeId",
+                                    "description": "",
+                                    "cols": 6
+                                }
+                            ],
+                            "type": "row"
+                        }
+                    ],
+                    "type": "section",
+                    "name": "sec185",
+                    "cols": 2,
+                    "hidden": true
+                }
+            ],
+            "type": "form",
+            "name": "ECaseCreate"
+        },
+        "allowedActions": [
+            {
+                "name": "Cancel",
+                "title": "Cancel"
+            },
+            {
+                "name": "SaveAsDraft",
+                "title": "Save"
+            },
+            {
+                "name": "Next",
+                "title": "Next"
+            }
+        ]
+    },
+    "steps": [
+        {
+            "name": "RecordState1",
+            "title": "Fill Application",
+            "state": "Current",
+            "allowedActions": [],
+            "subSteps": [
+                {
+                    "name": "CASE.Create",
+                    "title": "Case Details",
+                    "state": "Active",
+                    "allowedActions": []
+                }
+            ]
+        },
+        {
+            "name": "RecordState3",
+            "title": "Pay",
+            "state": "Draft",
+            "allowedActions": [],
+            "subSteps": []
+        },
+        {
+            "name": "RecordState4",
+            "title": "Submit",
+            "state": "Draft",
+            "allowedActions": [],
+            "subSteps": []
+        }
+    ],
+    "type": "processFlow",
+    "name": "BASE:E_Apply",
+    "description": "Please, provide the required fields and press the button Next."
+}
