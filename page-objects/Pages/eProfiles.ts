@@ -1,5 +1,4 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { SignInTo } from './signInPortals';
 
 export class GetProfile {
 
@@ -21,7 +20,7 @@ export class GetProfile {
         await this.page.waitForLoadState('load');
         await this.coatOfArmsImg.waitFor({state: "visible"});
         const responsePromise = this.page.waitForResponse((response) =>
-            response.url().includes("https://societyapi.test.gsb.gov.zm/components?type=corporateAccount")
+            response.url().includes(`components?type=corporateAccount`)
         );
 
         //actions
@@ -47,11 +46,7 @@ export class GetProfile {
         await this.personalProfileSelect.waitFor()
         await this.personalProfileSelect.click()
 
-
     }
-
-
-
 }
 
 

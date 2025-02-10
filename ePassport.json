@@ -23,11 +23,12 @@
       "TimeToIssueText": "0 hours",
       "Validity": "30",
       "ValidityType": "1",
-      "Phone": "+260 211 254336",
+      "Phone": "+260 211 255756",
       "Email": "info@mohais.gov.zm",
       "Website": "https://www.moha.gov.zm",
       "ApplicationName": "Registrar of Societies",
       "RequireNirCompletedUser": "true",
+      "ServiceReqMobileApp": "true",
       "ApplicantType": null,
       "EligibilityRequirements": null,
       "ProcessID": null,
@@ -35,8 +36,7 @@
       "SubServiceID": null,
       "TimeToIssue": null,
       "TypeToIssue": null,
-      "Logo": null,
-      "ServiceReqMobileApp": null
+      "Logo": null
     },
     "lex": {
       "total": 1,
@@ -61,7 +61,9 @@
           "SupportingDocID": {
             "key": "14000000-1000-1000-1000-100000000010",
             "value": "Identity Document of Applicant or Representative"
-          }
+          },
+          "CaseTypeID": "1",
+          "GroupName": "Standard Requirements for Applicant"
         },
         {
           "key": "14000000-1000-1000-1000-100000000012",
@@ -69,7 +71,9 @@
           "SupportingDocID": {
             "key": "14000000-1000-1000-1000-100000000012",
             "value": "Registration Certificate of Organisation"
-          }
+          },
+          "CaseTypeID": "1",
+          "GroupName": "Standard Requirements for Applicant"
         }
       ]
     },
@@ -186,42 +190,7 @@
                             },
                             "hidden": {
                               "${servicePassportPage.passport.RequireNirCompletedUser} !== 'true' || ${User.nirCompleted} === true": false,
-                              "${User.nirCompleted} !== true && ${servicePassportPage.passport.RequireNirCompletedUser} === 'true'": true
-                            }
-                          }
-                        },
-                        {
-                          "content": [
-                            {
-                              "value": "You cannot apply to service. Go to 'My Profile' and complete registration",
-                              "color": "orange",
-                              "size": "medium",
-                              "style": "bold",
-                              "type": "text",
-                              "metaData": {
-                                "cssClass": "align-items-left d-flex justify-content-start"
-                              }
-                            },
-                            {
-                              "text": "Go to My Profile",
-                              "href": "/user-profile",
-                              "target": "_self",
-                              "buttonStyle": "secondary",
-                              "type": "link",
-                              "metaData": {
-                                "cssClass": "align-items-left"
-                              }
-                            }
-                          ],
-                          "type": "row",
-                          "cols": 12,
-                          "metaData": {
-                            "cssClass": "d-flex align-items-center"
-                          },
-                          "propertyConverters": {
-                            "hidden": {
-                              "${servicePassportPage.passport.RequireNirCompletedUser} === 'true' && ${User.nirCompleted} != true": false,
-                              "${servicePassportPage.passport.RequireNirCompletedUser} != 'true' || ${User.nirCompleted} === true": true
+                              "${servicePassportPage.passport.RequireNirCompletedUser} === 'true' && ${User.nirCompleted} === false": true
                             }
                           }
                         },
@@ -295,92 +264,123 @@
                     {
                       "content": [
                         {
-                          "allowSelect": false,
-                          "titleTemplate": {
-                            "content": [
-                              {
-                                "color": "gray",
-                                "allowEdit": false,
-                                "value": "dge-text",
-                                "size": "large",
-                                "type": "icon",
-                                "metaData": {
-                                  "cssClass": "px-0"
-                                }
-                              },
-                              {
-                                "value": "Eligibility Requirements",
-                                "color": "dark",
-                                "style": "bold",
-                                "type": "text",
-                                "metaData": {
-                                  "cssClass": "ps-1"
-                                }
-                              },
-                              {
-                                "href": "https://zamportal.gov.zm/faq-category/digital-signature/",
-                                "target": "_self",
-                                "textTemplate": {
-                                  "value": "- ZamMobile app to e-Sign the application",
-                                  "type": "text"
-                                },
-                                "type": "link",
-                                "cols": 12,
-                                "metaData": {
-                                  "cssClass": "ms-2 mt-2"
-                                },
-                                "propertyConverters": {
-                                  "hidden": {
-                                    "${servicePassportPage.passport.ServiceReqMobileApp} === 'true'": false,
-                                    "${servicePassportPage.passport.ServiceReqMobileApp} !== 'true'": true
-                                  }
-                                }
-                              },
-                              {
-                                "value": "${servicePassportPage.passport.EligibilityRequirements}",
-                                "type": "text",
-                                "cols": 12,
-                                "metaData": {
-                                  "cssClass": "ms-4 mt-2"
-                                },
-                                "propertyConverters": {
-                                  "hidden": {
-                                    "${servicePassportPage.passport.EligibilityRequirements} !== null": false,
-                                    "${servicePassportPage.passport.EligibilityRequirements} === null": true
-                                  }
-                                }
-                              }
-                            ],
-                            "type": "row",
-                            "cols": 12,
-                            "metaData": {
-                              "cssClass": "d-flex align-items-center"
-                            }
+                          "color": "gray",
+                          "allowEdit": false,
+                          "value": "dge-text",
+                          "size": "large",
+                          "type": "icon",
+                          "metaData": {
+                            "cssClass": "px-0"
+                          }
+                        },
+                        {
+                          "value": "Eligibility Requirements",
+                          "color": "dark",
+                          "style": "bold",
+                          "type": "text",
+                          "metaData": {
+                            "cssClass": "ps-1"
+                          }
+                        },
+                        {
+                          "href": "https://pass.test.gsb.gov.zm/",
+                          "target": "_self",
+                          "textTemplate": {
+                            "value": "- ZamMobile app to e-Sign the application",
+                            "type": "text"
                           },
+                          "type": "link",
+                          "cols": 12,
+                          "metaData": {
+                            "cssClass": "ms-2 mt-2"
+                          },
+                          "propertyConverters": {
+                            "hidden": {
+                              "${servicePassportPage.passport.ServiceReqMobileApp} === 'true'": false,
+                              "${servicePassportPage.passport.ServiceReqMobileApp} !== 'true'": true
+                            }
+                          }
+                        },
+                        {
+                          "allowSelect": false,
                           "displayDivider": false,
                           "itemTemplate": {
                             "content": [
                               {
-                                "value": "- ${item.SupportingDocID.value}",
-                                "type": "text",
+                                "allowHeaderClick": false,
+                                "collapsed": true,
+                                "headerTemplate": {
+                                  "content": [
+                                    {
+                                      "value": "${item.SupportingDocID.value}",
+                                      "size": "medium",
+                                      "style": "light",
+                                      "type": "text",
+                                      "cols": 12,
+                                      "metaData": {
+                                        "cssClass": "custom-fs-4"
+                                      }
+                                    }
+                                  ],
+                                  "type": "row",
+                                  "metaData": {
+                                    "cssClass": "p-2 m-0 bg-gray-200"
+                                  }
+                                },
+                                "background": "bg-gray-100 m-0",
+                                "type": "section",
                                 "cols": 12
                               }
                             ],
-                            "type": "row",
-                            "metaData": {
-                              "cssClass": "ms-2 mt-2"
-                            },
-                            "propertyConverters": {
-                              "hidden": {
-                                "${servicePassportPage.passport.EligibilityRequirements} === null": false,
-                                "${servicePassportPage.passport.EligibilityRequirements} !== null": true
+                            "type": "row"
+                          },
+                          "columns": [],
+                          "paging": {
+                            "pageSize": 100
+                          },
+                          "grouping": {
+                            "groupDisplayType": "expandable",
+                            "isExpanded": false,
+                            "groups": [
+                              {
+                                "name": "GroupName",
+                                "ascending": false,
+                                "header": {
+                                  "label": "${value}",
+                                  "valuePath": "GroupName"
+                                }
+                              }
+                            ]
+                          },
+                          "type": "listBox",
+                          "name": "eligibilityRequirements",
+                          "cols": 12,
+                          "metaData": {
+                            "cssClass": "mb-2 list-box-section",
+                            "dataSources": {
+                              "requirements": {
+                                "filters": [],
+                                "searchParameters": [],
+                                "sortParameters": [],
+                                "parameters": [
+                                  {
+                                    "sourceName": "serviceId",
+                                    "destinationName": "ServiceID",
+                                    "isRequired": false,
+                                    "type": "tableFilter"
+                                  }
+                                ],
+                                "type": "table",
+                                "singleResult": false,
+                                "tableName": "BASE:vw_ZIGS_Services_SupportingDocs",
+                                "viewName": "default",
+                                "forwardPaginationParameters": false
                               }
                             }
                           },
-                          "columns": [],
-                          "type": "listBox",
-                          "cols": 12,
-                          "ref": "servicePassportPage.requirements"
+                          "parameters": {
+                            "serviceId": "${servicePassportPage.passport.key}"
+                          }
                         }
                       ],
                       "type": "row",

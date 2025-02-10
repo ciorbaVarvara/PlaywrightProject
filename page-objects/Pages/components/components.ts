@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test"
-import { PageOfTheStep } from "./page";
+import { PageOfTheStep } from "../page";
 
 export class Components extends PageOfTheStep {
 
@@ -18,10 +18,4 @@ export class Components extends PageOfTheStep {
         return await component.getAttribute('aria-label');
     }
 
-
-
-
-
-
-
-}
+    }

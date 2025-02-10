@@ -36,24 +36,5 @@ export class SignInTo {
         await this.passwordField.waitFor({state: "visible"})
         await this.passwordField.fill('Chisinau2024')
         await this.signInBtn.click()
-    }
-
-    async obtToken (){
-       // https://societyapi.test.gsb.gov.zm/dgpass/signin-oidc
-       const authResponse = await this.page.request.post('https://societyapi.test.gsb.gov.zm/dgpass/signin-oidc', {
-        data: {
-          username: 'varvara.ciorba',
-          password: 'Chisinau2024'
-        }
-      });
-      const token = (await authResponse.json()).token;
-      console.log(authResponse);
-
-    }
-
-
-
-
-    
-
+    } 
 }

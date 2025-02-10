@@ -16,6 +16,8 @@ export const eligibility = JSON.parse(
     '["Identity Document of Applicant or Representative", "Registration Certificate of Organisation"]'
   );
 
+export const zamMobileAppLinkTEST = "https://pass.test.gsb.gov.zm/"
+
 //case details
 export const caseNumber = "AUTO-NUMBERED";
 export const agency = "Registrar of Societies";
@@ -29,3 +31,12 @@ export const serviceType = "New";
 //process
 export const processName = "BASE:E_Apply";
 
+//application form
+export const greenMsg = " The record is verified and ready for application, press `NEXT` to move on "
+export const firstMsg = " Type the Name and press `QUERY` button to check availability ";
+export const typeOfSociety= JSON.parse(
+  '["Community Service Society", "Cultural/Sports Group","International Society","Political Party", "Pressure Group", "Professional Society", "Religious Group", "Women/Youth/Club/Farmers Group" ]'
+);
+
+//eligbility requirements
+export const eligibilityList = "National Registration Card (NRC) of Applicant";
